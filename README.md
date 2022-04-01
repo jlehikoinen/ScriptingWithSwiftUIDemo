@@ -4,7 +4,7 @@
 
 This is a sequel for 2019 FinMacAdmin [Scripting in Swift](https://github.com/jlehikoinen/ScriptingInSwiftDemo) presentation.
 
-The demo script `DefaultMailApp.swift` can be used for setting up default email application (macOS Mail or MS Outlook). Try `DefaultMailAppOnlyUI.swift` if you want test the UI.
+The demo script `DefaultMailApp.swift` can be used for setting up default email application (macOS Mail or MS Outlook). Try `DefaultMailAppOnlyUI.swift` if you want test the UI only.
 
 ## Requirements
 
@@ -28,11 +28,13 @@ Choose default email app example:
 
 `$ ./DefaultMailApp.swift`
 
-Animation example???
+Empty window example:
+
+`$ ./EmptyWindow.swift`
 
 ## Default email app
 
-Add screenshot.
+**TODO: Add screenshot**
 
 ## Default email app configuration
 
@@ -78,4 +80,4 @@ mailto: com.microsoft.outlook
 
 ## Todo
 
-* How to implement [CommandMenus](https://developer.apple.com/documentation/swiftui/commandmenu) in SwiftUI scripts?
+* How to implement [CommandMenu](https://developer.apple.com/documentation/swiftui/commandmenu) in SwiftUI scripts?

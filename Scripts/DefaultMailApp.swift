@@ -7,7 +7,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    // App data
+    // App data (Mail & Outlook properties)
     @State var apps = [
         AppProperties(name: AppFriendlyName.appleMail,
                       path: AppPath.appleMail,
@@ -22,13 +22,16 @@ struct ContentView: View {
     // Animation
     @State var iconHighlightAnimating: Bool = false
     
+    // View body
     var body: some View {
-        VStack(spacing: 20) {
+        VStack {
             
+            // Header
             Text("Choose default email app")
                 .font(.largeTitle)
                 // .font(.system(size: 36))
             
+            // Iterate through the list of apps
             List {
                 ForEach(apps) { app in
                     HStack {
@@ -63,17 +66,15 @@ struct ContentView: View {
                                 .font(.title2)
                                 .fontWeight(.semibold)
                         }
-                        .buttonStyle(CustomButtonStyle())
-                        // Working around "column" layout issues
-                        .frame(width: 140)
+                        // Custom button styles
+                        .buttonStyle(CustomButtonStyleGray())
+                        // .buttonStyle(CustomButtonStyleColorful())
 
                         Spacer()
                     }
-                    .padding(.vertical, 10)
+                    .padding(.vertical, 12)
                 }
             }
-            // TODO: Why this is needed with script? Test ScrollView?
-            .frame(height: 240)
         }
         .padding(.vertical, 20)
         
@@ -129,18 +130,37 @@ struct ContentView: View {
 
 // MARK: Custom styles
 
-struct CustomButtonStyle: ButtonStyle {
+struct CustomButtonStyleGray: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .padding(14)
-            .background(.teal)
+            // Static button size
+            .frame(width: 120, height: 50)
+            .background(.gray)
+                .opacity(configuration.isPressed ? 0.5 : 1)
+            .foregroundColor(.primary)
+                .opacity(configuration.isPressed ? 0.5 : 1)
+            .cornerRadius(6)
+            .overlay(
+                RoundedRectangle(cornerRadius: 6)
+                    .stroke(.white, lineWidth: 1)
+            )
+    }
+}
+
+struct CustomButtonStyleColorful: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            // Static button size
+            .frame(width: 120, height: 50)
+            .background(LinearGradient(colors: [.pink, .purple, .blue], startPoint: .topLeading, endPoint: .bottomTrailing))
                 .opacity(configuration.isPressed ? 0.5 : 1)
             .foregroundColor(.primary)
                 .opacity(configuration.isPressed ? 0.5 : 1)
             .cornerRadius(8)
+            .scaleEffect(configuration.isPressed ? 0.8 : 1)
+            .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
     }
 }
-
 
 // MARK: Helper struct for app properties
 
