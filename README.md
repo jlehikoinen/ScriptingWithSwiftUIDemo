@@ -1,10 +1,12 @@
 # Scripting with SwiftUI Demo
 
-"Scripting with SwiftUI" demo for FinMacAdmin meetup 13.04.2022. 
+*Scripting with SwiftUI* demo for FinMacAdmin meetup 13.04.2022. 
 
 This is a sequel for 2019 FinMacAdmin [Scripting in Swift](https://github.com/jlehikoinen/ScriptingInSwiftDemo) presentation.
 
-The demo script `DefaultMailApp.swift` can be used for setting up default email application (macOS Mail or MS Outlook). Try `DefaultMailAppOnlyUI.swift` if you want test the UI only.
+SwiftUI scripts are located in the `Scripts` folder. `DefaultMailApp.swift` script can be used for setting up default email application (macOS Mail or MS Outlook). Try `DefaultMailAppOnlyUI.swift` script if you want test the UI only.
+
+This repo contains also SwiftUI Xcode project `ScriptingWithSwiftUIDemo` that can be used for e.g. live previewing SwiftUI code.
 
 ## Requirements
 
