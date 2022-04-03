@@ -78,7 +78,7 @@ mailto: com.microsoft.outlook
 
 * Menu bar displays the active app name as "swift-frontend" in GUI scripts
 * Scripts have been tested only on macOS 12
-* Animations can output `CVCGDisplayLink` warning messages to console
+* Code related to SwiftUI animations can output `CVCGDisplayLink` warning messages to console
 
 ## Todo
 
