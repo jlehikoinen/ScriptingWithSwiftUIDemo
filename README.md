@@ -36,7 +36,7 @@ Empty window example:
 
 ## Default email app
 
-**TODO: Add screenshot**
+![Demo app](Screenshots/DemoApp.png)
 
 ## Default email app configuration
 
