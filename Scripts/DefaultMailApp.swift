@@ -274,9 +274,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     let appName = "Demo App"
     
-    // Static window size
-    let window = NSWindow(contentRect: NSMakeRect(0, 0, 600, 340),
-                          styleMask: [.titled, .closable, .miniaturizable],
+    // Resizable window
+    let window = NSWindow(contentRect: NSMakeRect(0, 0, .zero, .zero),
+                          styleMask: [.titled, .closable, .miniaturizable, .resizable],
                           backing: .buffered,
                           defer: true)
     
@@ -292,8 +292,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.setActivationPolicy(.regular)
         NSApp.activate(ignoringOtherApps: true)
         
-        // Setup window's SwiftUI content view
-        window.contentView = NSHostingView(rootView: ContentView())
+        // Setup window's SwiftUI content view with min. width and height
+        window.contentView = NSHostingView(
+            rootView: ContentView()
+                .frame(minWidth: 600,
+                       maxWidth: .infinity,
+                       minHeight: 340,
+                       maxHeight: .infinity)
+        )
         
         // Dock icon
         setupDockIcon(path: "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/ToolbarCustomizeIcon.icns")

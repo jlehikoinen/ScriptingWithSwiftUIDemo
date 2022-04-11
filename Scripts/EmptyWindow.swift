@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     let appName = "Demo App"
     
-    // Static window size
+    // Static window needed because there's no SwiftUI content
     let window = NSWindow(contentRect: NSMakeRect(0, 0, 600, 340),
                           styleMask: [.titled, .closable, .miniaturizable],
                           backing: .buffered,
