@@ -10,13 +10,16 @@ This repo contains also SwiftUI Xcode project `ScriptingWithSwiftUIDemo` that ca
 
 ## Requirements
 
-* Xcode 13 or Xcode Command Line Tools installed
+* Xcode 13
+* Xcode Command Line Tools
 
 ## Setup
 
-Install Xcode or Xcode Command Line Tools.
+Install Xcode Command Line Tools.
 
 > Tip: Install Xcode Command Line Tools by running `swift` in Terminal app.
+
+Install Xcode if you want to live preview SwiftUI code.
 
 Download or `git clone` this repo.
 
